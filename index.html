@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITY</title>
+</head>
+<body>
+    <form id="userDataForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br>
+
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday" required><br>
+        <label for="address">address:</label>
+        <input type="text" id="address" name="address" required><br>
+        <label for="email address">email address:</label>
+        <input type="email"address" name="address" required><br>
+
+        <button type="button" onclick="myfunction()">Submit</button>
+    </form>
+
+    <div id="myfunction"></div>
+
+    <script>
+        function myfunction() {
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const birthday = document.getElementById('birthday').value;
+            const address = document.getElementById('address').value;
+            const emailaddress = document.getElementById('emailaddress').value;
+            // Create user object
+            const user = {
+                firstName: firstName,
+                lastName: lastName,
+                age: age,
+                gender: gender,
+                birthday: birthday,
+                address: address,
+                emailaddress: emailaddress,
+
+            };
+
+            // Display user data
+            const userDataDisplay = document.getElementById('myfunction');
+            userDataDisplay.innerHTML = `
+                <p><strong>First Name:</strong> ${user.firstName}</p>
+                <p><strong>Last Name:</strong> ${user.lastName}</p>
+                <p><strong>Age:</strong> ${user.age}</p>
+                <p><strong>Gender:</strong> ${user.gender}</p>
+                <p><strong>Birthday:</strong> ${user.birthday}</p>
+                <p><strong>address:</strong> ${user.address}</p>
+                <p><strong>emailaddress:</strong> ${user.emailaddress}</p>
+        
+        }
+    </script>
+</body>
+</html
